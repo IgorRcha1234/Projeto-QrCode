@@ -25,12 +25,12 @@ public class QrCodeActivity extends AppCompatActivity {
         Button btnSalvar = findViewById(R.id.btnSalvar);
         Button btnCompartilhar = findViewById(R.id.btnCompartilhar);
 
-        // Recebe os dados passados pela RegisterActivity
+        // Recebe os dados passados pela MainActivity
         String userId = getIntent().getStringExtra("userId");
         String nome = getIntent().getStringExtra("nome");
         String empresa = getIntent().getStringExtra("empresa");
 
-        // Define os textos na tela
+        // Define os textos visíveis no crachá
         if (nome != null) txtNome.setText(nome);
         if (empresa != null) txtEmpresa.setText(empresa);
 

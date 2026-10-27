@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+
+        <!-- Ecrã Principal (Início) -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -18,10 +20,31 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Ecrã de Registo de Utilizador -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Ecrã de Exibição do QR Code -->
+        <activity
+            android:name=".QrCodeActivity"
+            android:exported="false" />
+
+        <!-- Ecrã de Operador -->
+        <activity
+            android:name=".OperatorActivity"
+            android:exported="false" />
+
+        <!-- Ecrã do Leitor de QR Code (Scanner) -->
+        <activity
+            android:name=".ScannerActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
