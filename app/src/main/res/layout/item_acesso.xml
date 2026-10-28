@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="#101f33"
+    android:layout_marginBottom="8dp">
+
+    <!-- Iniciais -->
+    <TextView
+        android:id="@+id/txtInitials"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#1c2d42"
+        android:gravity="center"
+        android:text="--"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="12dp" />
+
+    <!-- Informações do Usuário -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNomeItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtEmpresaItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empresa"
+            android:textColor="#8899a6"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Hora e Status -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/txtHoraItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--:--"
+            android:textColor="#8899a6"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/txtStatusItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTRADA"
+            android:textColor="#64b5f6"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

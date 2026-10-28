@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.Button;
@@ -23,9 +24,9 @@ public class QrCodeActivity extends AppCompatActivity {
         TextView txtNome = findViewById(R.id.txtNome);
         TextView txtEmpresa = findViewById(R.id.txtEmpresa);
         Button btnSalvar = findViewById(R.id.btnSalvar);
-        Button btnCompartilhar = findViewById(R.id.btnCompartilhar);
+        Button btnIrPortaria = findViewById(R.id.btnIrPortaria); // Atualizado para o novo ID
 
-        // Recebe os dados passados pela MainActivity
+        // Recebe os dados passados pela MainActivity / RegisterActivity
         String userId = getIntent().getStringExtra("userId");
         String nome = getIntent().getStringExtra("nome");
         String empresa = getIntent().getStringExtra("empresa");
@@ -51,8 +52,10 @@ public class QrCodeActivity extends AppCompatActivity {
                 Toast.makeText(this, "Crachá pronto para salvar na galeria!", Toast.LENGTH_SHORT).show()
         );
 
-        btnCompartilhar.setOnClickListener(v ->
-                Toast.makeText(this, "A abrir opções de partilha...", Toast.LENGTH_SHORT).show()
-        );
+        // Ação para abrir a tela da Portaria (OperatorActivity)
+        btnIrPortaria.setOnClickListener(v -> {
+            Intent intent = new Intent(QrCodeActivity.this, OperatorActivity.class);
+            startActivity(intent);
+        });
     }
 }

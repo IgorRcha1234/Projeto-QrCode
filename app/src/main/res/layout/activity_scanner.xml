@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     android:background="#07111e">
 
-    <!-- Substituído para a câmara do ZXing funcionar perfeitamente -->
+    <!-- Câmera do ZXing ao fundo de toda a tela -->
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/scannerContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- Camada de Interface Superior -->
+    <!-- Camada de Interface Superior sobre a câmera -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,18 +63,16 @@
             android:textAlignment="center"
             android:layout_marginBottom="40dp" />
 
-        <!-- Moldura Central de Foco -->
-        <ImageView
+        <!-- Espaço transparente central (onde o QR Code é focado) -->
+        <View
             android:layout_width="260dp"
             android:layout_height="260dp"
-            android:background="@drawable/bg_input_field"
-            android:padding="20dp"
             android:layout_marginBottom="24dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mantenha o código dentro da moldura"
+            android:text="Mantenha o código dentro do centro da tela"
             android:textColor="#8899a6"
             android:textSize="12sp"
             android:layout_marginBottom="40dp" />

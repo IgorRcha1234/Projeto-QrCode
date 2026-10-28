@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:padding="20dp">
 
+    <!-- TopBar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,6 +38,7 @@
             app:tint="#FFFFFF" />
     </LinearLayout>
 
+    <!-- SubHeader Status -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,6 +61,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtInfoOperador"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sistema Ativo · Operador"
@@ -76,20 +79,20 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Card ÚLTIMA LEITURA -->
     <LinearLayout
+        android:id="@+id/cardUltimaLeitura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_input_field"
+        android:background="#101f33"
         android:orientation="vertical"
         android:padding="16dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="12dp">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
@@ -104,97 +107,61 @@
                 android:id="@+id/txtUltimaHora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="--"
+                android:text="--:--"
                 android:textColor="#8899a6"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txtUltimoNome"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="12dp">
+            android:text="Aguardando leitura..."
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_info_box"
-                android:src="@android:drawable/ic_menu_myplaces"
-                android:padding="8dp"
-                app:tint="#FFFFFF"
-                android:layout_marginRight="12dp" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtUltimoNome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nenhuma leitura recente"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txtUltimoDetalhe"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aguardando scanner..."
-                    android:textColor="#8899a6"
-                    android:textSize="11sp" />
-            </LinearLayout>
-        </LinearLayout>
+        <TextView
+            android:id="@+id/txtUltimoDetalhe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aponte o scanner para registrar"
+            android:textColor="#8899a6"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/txtUltimoStatus"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#1b263b"
+            android:layout_height="36dp"
+            android:layout_marginTop="12dp"
+            android:background="#1c2d42"
             android:gravity="center"
-            android:text="AGUARDANDO ACESSO"
-            android:textColor="#8899a6"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="12dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Últimos acessos"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tempo real"
-            android:textColor="#8899a6"
+            android:text="NENHUM ACESSO RECENTE"
+            android:textColor="#64b5f6"
+            android:textStyle="bold"
             android:textSize="12sp" />
     </LinearLayout>
 
-    <ListView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Últimos acessos"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <!-- RecyclerView com ID correto (listLogs) -->
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listLogs"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="8dp" />
+        android:layout_marginBottom="12dp" />
 
+    <!-- Botão com ID correto (btnEscanear) -->
     <Button
         android:id="@+id/btnEscanear"
         android:layout_width="match_parent"
@@ -202,9 +169,6 @@
         android:text="Escanear QR Code"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:textSize="15sp"
-        android:backgroundTint="#10233f"
-        android:textAllCaps="false"
-        android:layout_marginTop="10dp" />
+        android:backgroundTint="#1a385c" />
 
 </LinearLayout>
